@@ -10,6 +10,9 @@ import injectContext from "./store/appContext";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 
+import { CuentaCrear } from "./pages/cuentacrear";
+import { CuentaIniciar } from "./pages/cuentainiciar";
+
 //create your first component
 const Layout = () => {
 	//the basename is used when your project is published in a subdirectory and not in the root of the domain
@@ -20,6 +23,7 @@ const Layout = () => {
 		<div className="d-flex flex-column h-100">
 			<BrowserRouter basename={basename}>
 				<ScrollToTop>
+					CuentaIniciar
 					<Navbar />
 					<Switch>
 						<Route exact path="/">
@@ -27,6 +31,12 @@ const Layout = () => {
 						</Route>
 						<Route exact path="/demo">
 							<Demo />
+						</Route>
+						<Route exact path="/cuentacrear">
+							<CuentaCrear />
+						</Route>
+						<Route exact path="/cuentainiciar">
+							<CuentaIniciar />
 						</Route>
 						<Route exact path="/single/:theid">
 							<Single />
